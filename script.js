@@ -107,7 +107,7 @@ function registerField() {
   let regSwitcherHref = document.createElement("a");
   regSwitcherHref.setAttribute("href", "#");
   regSwitcher.appendChild(regSwitcherHref);
-  let regSwitcherB = document.createTextNode("Login");
+  let regSwitcherB = document.createTextNode("login.");
   regSwitcherHref.appendChild(regSwitcherB);
   divParent.appendChild(regSwitcher);
 
@@ -182,6 +182,39 @@ function regSuccess() {
   regSwitcherHref.addEventListener("click", successSwitch);
 }
 
+function logSuccess() {
+  // Input Field "div" created.
+  let divParent = document.createElement("div");
+  divParent.setAttribute("id", "loginSuccess");
+  divParent.classList.add("flex-column");
+
+  // Title
+  let divTitle = document.createElement("h1");
+  let divTitleText = document.createTextNode("Welcome!");
+  divTitle.classList.add("spacer");
+  divTitle.appendChild(divTitleText);
+  divParent.appendChild(divTitle);
+
+  // subTitle
+  let divSubTitle = document.createElement("h3");
+  let divText = document.createElement("p");
+  let divSubTitleText1 = document.createTextNode(
+    "You've reached the login page!"
+  );
+  let divSubTitleText2 = document.createTextNode(
+    "There's nothing to see here yet."
+  );
+  divSubTitle.classList.add("spacer");
+  divSubTitle.appendChild(divSubTitleText1);
+  divText.appendChild(divSubTitleText2);
+  divSubTitle.appendChild(divText);
+  divParent.appendChild(divSubTitle);
+
+  // Appent to Main Container
+  let mainContainer = document.querySelector("#mainContainer");
+  mainContainer.appendChild(divParent);
+}
+
 // Login/Register Switch
 function fieldSwitch() {
   if (arraySwitcher[0] === "swLog") {
@@ -225,7 +258,8 @@ function verifyAcc() {
 
   if (verifyAccount === myAccount && verifyPassword === myPassword) {
     console.log("Credentials match");
-    resetInput();
+    document.querySelector("#loginField").remove();
+    logSuccess();
   } else {
     console.log("Credentials don't match!");
     resetInput();
