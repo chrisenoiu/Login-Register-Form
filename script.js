@@ -199,7 +199,7 @@ function logSuccess() {
   let divSubTitle = document.createElement("h3");
   let divText = document.createElement("p");
   let divSubTitleText1 = document.createTextNode(
-    "You've reached the login page!"
+    "You've reached the first page!"
   );
   let divSubTitleText2 = document.createTextNode(
     "There's nothing to see here yet."
