@@ -26,7 +26,7 @@ function loginField() {
   let inputFieldPass = document.createElement("input");
   inputFieldPass.classList.add("spacer");
   inputFieldPass.setAttribute("id", "passLogin");
-  inputFieldPass.setAttribute("type", "text");
+  inputFieldPass.setAttribute("type", "password");
   inputFieldPass.setAttribute("placeholder", "Password");
   divParent.appendChild(inputFieldPass);
 
@@ -87,7 +87,7 @@ function registerField() {
   let inputFieldPass = document.createElement("input");
   inputFieldPass.classList.add("spacer");
   inputFieldPass.setAttribute("id", "passInput");
-  inputFieldPass.setAttribute("type", "text");
+  inputFieldPass.setAttribute("type", "password");
   inputFieldPass.setAttribute("placeholder", "Password");
   divParent.appendChild(inputFieldPass);
 
